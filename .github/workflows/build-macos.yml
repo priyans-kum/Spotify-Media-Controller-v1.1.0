@@ -1,0 +1,37 @@
+name: Build macOS app
+
+on:
+  push:
+    branches:
+      - feature/macos-media-controller
+    paths:
+      - "macOS/**"
+      - "README-MAC.md"
+      - ".github/workflows/build-macos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Show Swift toolchain
+        run: swift --version
+
+      - name: Build and package app
+        run: |
+          chmod +x macOS/build-macos.sh
+          ./macOS/build-macos.sh
+
+      - name: Upload app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpotifyMediaController-macOS-arm64
+          path: macOS/dist/SpotifyMediaController-macOS-arm64.zip
+          if-no-files-found: error
+          retention-days: 14
