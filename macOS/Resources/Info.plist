@@ -1,0 +1,34 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Spotify Media Controller</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>Spotify Media Controller</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>com.spotifymediacontroller.mac</string>
+
+    <key>CFBundleExecutable</key>
+    <string>SpotifyMediaController</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>LSMinimumSystemVersion</key>
+    <string>14.2</string>
+
+    <key>LSUIElement</key>
+    <true/>
+
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Spotify Media Controller needs permission to pause and resume Spotify when other applications play audio.</string>
+
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>Spotify Media Controller monitors system audio activity to pause Spotify while other media plays.</string>
+</dict>
+</plist>
